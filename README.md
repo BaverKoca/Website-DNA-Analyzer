@@ -1,195 +1,197 @@
-# Dream Atlas
+# Website DNA Analyzer
 
-<p align="center">
-  <img src="docs/screenshots/landing-page.png" alt="Dream Atlas" />
-</p>
+![Next.js](https://img.shields.io/badge/Next.js-App%20Router-black?style=for-the-badge&logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-Premium%20UI-38B2AC?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-Website%20Analysis-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 
+**Website DNA Analyzer reveals the design culture, visual system, and brand maturity behind any website.**
+
+---
 
 ## Screenshots
 
-| Landing | Atlas |
-|----------|----------|
-| ![](docs/screenshots/landing-page.png) | ![](docs/screenshots/atlas-graph.png) |
 
-| Dream | Dream Weather |
-|----------|----------|
-| ![](docs/screenshots/dream-page.png) | ![](docs/screenshots/weather-page.png) |
+---
 
-| Archive |
-|----------|
-| ![](docs/screenshots/archive-page.png) |
+Website DNA Analyzer is a deterministic premium audit tool that opens a website with Playwright, extracts real computed design signals, classifies design culture, analyzes visual layout behavior, compares websites side by side, and generates exportable audit reports.
 
-Dream Atlas is a private-first dream journal and symbolic analysis platform.
+It is built to feel like an elite design intelligence instrument rather than a generic SaaS dashboard.
 
-It lets people submit dreams anonymously, map recurring motifs into a living Atlas, browse a filterable archive, and read the collective atmosphere as Dream Weather.
+---
 
-Built for presentation-ready demos and real local-first usage, the app is designed to feel cinematic, resilient, and intentionally minimal about identity.
+## Product Highlights
 
-## Why This Project Exists
+| Capability | Description |
+| --- | --- |
+| **Single-Site Analysis** | Analyze typography, colors, spacing, radii, shadows, motion, screenshots, and visual metrics from a real website. |
+| **Design Culture Classifier** | Deterministically maps extracted signals to culture profiles such as Linear, Vercel, Apple, Stripe, Swiss editorial, Luxury editorial, Brutalist startup, Web3 maximalist, Agency portfolio, and YC B2B SaaS. |
+| **Visual DNA** | Captures desktop and mobile screenshots, then scores whitespace, hierarchy, symmetry, CTA prominence, navigation complexity, section rhythm, density, and contrast distribution. |
+| **Brand Maturity Score** | Scores design-system maturity from typography consistency, color discipline, spacing rhythm, radius usage, motion behavior, and component density. |
+| **Compare Mode** | Compare two websites side by side with deterministic winner labels for maturity, minimalism, hierarchy, and product/design-system discipline. |
+| **Exportable Reports** | Generate polished browser-printable audit reports for single-site and comparison workflows. |
 
-Dream Atlas turns dream fragments into a public-but-anonymous cultural map.
+---
 
-- submit a dream without creating an account
-- extract symbols, moods, archetypes, and reflective themes
-- visualize similarity as a constellation graph
-- browse the archive by symbol, emotion, archetype, mood, or search
-- read a symbolic weather report from the aggregate archive
-- degrade gracefully when the LLM is unavailable
+## Feature Overview
 
-## Product Tour
+- Real Playwright-powered website analysis
+- Computed style extraction from visible DOM elements
+- Typography system detection
+- Color palette extraction
+- Spacing, radius, shadow, and motion token aggregation
+- Visual DNA screenshot analysis
+- Rules-based design culture classifier
+- Deterministic editorial DNA report generator
+- Compare Mode for two websites
+- Export report route for browser Save as PDF
+- Session-level analysis caching
+- Robust URL validation and graceful error states
+- Premium dark editorial dashboard UI
 
-### Landing
+---
 
-A focused entry point into the archive with a clear call to action.
+## Tech Stack
 
-### Submit
+- **Framework:** Next.js App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Website automation:** Playwright
+- **Testing:** Playwright Test
+- **Report persistence:** Browser `localStorage` for current-session exports
 
-Anonymous dream intake with privacy-first guidance.
+---
 
-### Atlas
+## How It Works
 
-An interactive graph of symbolic resemblance between dreams.
+```text
+User URL
+  -> Next.js API route
+  -> Playwright browser session
+  -> Computed style extraction
+  -> Visual screenshot analysis
+  -> Token normalization and aggregation
+  -> Rules-based culture classifier
+  -> Deterministic report generator
+  -> Dashboard / exportable report
+```
 
-### Archive
+The project does **not** use AI vision APIs or paid external services. All classifications, reports, scores, and observations are deterministic.
 
-A searchable, filterable grid of dream fragments.
+---
 
-### Dream Weather
-
-A generated atmosphere report derived from the collective state of the archive.
-
-### Health
-
-A lightweight application and database reachability check exposed at `/api/health`.
-
-## Stack
-
-- Next.js 13.4.12
-- React 18
-- TypeScript
-- Prisma 4.16.0
-- SQLite for local persistence
-- `react-force-graph-2d` for Atlas visualization
-- OpenAI-compatible local LLM endpoint for analysis
-
-## Quick Start
+## Local Setup
 
 ```bash
 npm install
-npm run prisma:generate
-npm run prisma:migrate
+npx playwright install chromium
 npm run dev
 ```
 
-Open `http://localhost:3000` after the development server starts.
+Open:
 
-## Environment
-
-Use these variables for local development:
-
-```env
-DATABASE_URL="file:./dreamatlas.db"
-
-LLM_PROVIDER=local
-LOCAL_LLM_BASE_URL=http://localhost:11434/v1
-LOCAL_LLM_API_KEY=local
-LOCAL_LLM_MODEL=nous-hermes-8b
-
-DEMO_MODE=true
-SIMULATE_LLM_FAILURE=false
+```text
+http://localhost:3000
 ```
 
-- `DATABASE_URL` points Prisma at the local SQLite file.
-- `LOCAL_LLM_BASE_URL` should expose an OpenAI-compatible `/v1` endpoint.
-- `LOCAL_LLM_MODEL` must match the model name exposed by the local server.
-- `DEMO_MODE=true` enables presentation-friendly demo behavior.
-- `SIMULATE_LLM_FAILURE=true` forces the fallback path for resilience testing.
+---
 
-## Database
-
-Dream Atlas uses SQLite for the MVP and local-first deployment model.
-
-- simple to run locally
-- easy to seed for demos
-- requires persistent disk in production
-- not ideal for stateless serverless deployments
-- PostgreSQL is the likely next-step upgrade
-
-## LLM Behavior
-
-Dream Atlas expects a local or self-hosted OpenAI-compatible service.
-
-- dream analysis should continue even if the model is unavailable
-- user-facing errors should remain clean and non-technical
-- dream submission should never be permanently blocked
-- fallback analysis is preferred over hard failures
-
-## Seed Data
-
-Populate the archive with curated atmospheric dreams:
-
-```bash
-npm run prisma:seed
-```
-
-The seed set is designed to make the Atlas, Archive, and Dream Weather experiences feel alive immediately after setup.
-
-## Scripts
+## Available Scripts
 
 ```bash
 npm run dev
 npm run build
 npm run start
 npm run lint
-npm run prisma:generate
-npm run prisma:migrate
-npm run prisma:studio
-npm run prisma:seed
+npm run typecheck
+npm run test
 ```
 
-`npm run build` already runs `prisma generate` before `next build`.
+---
+
+## Demo Script
+
+Use this flow for a clean product demo:
+
+1. Open the app.
+2. Analyze `linear.app`.
+3. Review:
+   - Design DNA match
+   - Visual DNA
+   - Brand Maturity Score
+   - DNA Report
+4. Switch to **Compare Mode**.
+5. Compare `linear.app` vs `vercel.com`.
+6. Review deterministic winner labels.
+7. Click **Export Report**.
+8. Use browser print / Save as PDF.
+
+---
+
+## Environment Notes
+
+No environment variables are required for the current version.
+
+See:
+
+```text
+.env.example
+```
+
+Playwright requires a Chromium browser binary during local development:
+
+```bash
+npx playwright install chromium
+```
+
+---
 
 ## Deployment Notes
 
-Recommended deployment pattern:
+The frontend can be deployed like a standard Next.js application, but the analysis engine uses Playwright inside a server-side API route. This has real production implications.
 
-- run the application on a machine with persistent storage
-- keep the SQLite database on durable disk
-- run the LLM separately and point Dream Atlas to its `/v1` endpoint
-- seed the database before demos
+### Vercel Notes
 
-If you plan to deploy on serverless infrastructure, migrate to a persistent database strategy first.
+Deploying the UI to Vercel is straightforward, but running Playwright inside Vercel serverless functions may require additional work:
 
-## Reliability Notes
+- Serverless functions may not include the required Chromium runtime by default.
+- Playwright browser binaries can exceed deployment size or runtime constraints.
+- Browser launch may require additional configuration depending on the environment.
+- Function timeout and memory limits can affect larger website audits.
+- Some production deployments should move analysis to a container, worker, queue-backed job, or dedicated browser service.
 
-- empty states are handled across landing, archive, atlas, and weather views
-- includes a global App Router error boundary
-- dream similarity and archive browsing work with sparse datasets
-- health checks use a lightweight database query
-- dream submission remains available during LLM outages
+For the most reliable demo, run the project locally or deploy it to an environment that explicitly supports Playwright browser execution.
 
-## Roadmap
+---
 
-- PostgreSQL support
-- vector embeddings and similarity search
-- stronger moderation tooling
-- curated exhibitions
-- scheduled Dream Weather generation
-- 3D Atlas exploration
-- ambient audio layer
+## Known Limitations
 
-## Health Check
+- Some websites block automated browsers or bot-like traffic.
+- Some websites hide styles behind scripts, authentication, geolocation, consent walls, or delayed rendering.
+- Screenshots are temporary and session-based.
+- Report export uses browser print / Save as PDF rather than a server-side PDF renderer.
+- Single-site and comparison export data is stored in browser `localStorage` for the current session.
+- Visual analysis uses deterministic DOM and screenshot heuristics, not AI vision APIs.
+- Culture classification is rules-based and deterministic, not an AI interpretation.
 
-The application exposes a health endpoint at:
+---
 
-```text
-/api/health
-```
+## Project Status
 
-The endpoint reports application status and verifies database connectivity with a lightweight query.
+This project is feature-complete as a deterministic MVP and ready for demo use. The next production step would be separating Playwright analysis into a dedicated worker or browser-capable runtime.
 
-## Contact
+---
 
-- GitHub: https://github.com/BaverKoca
-- LinkedIn: https://www.linkedin.com/in/baver-koca
-- Email: baver.koca00@gmail.com
+## Author
+
+**Baver Koca**
+
+- GitHub: [github.com/BaverKoca](https://github.com/BaverKoca)
+- LinkedIn: [linkedin.com/in/baver-koca](https://www.linkedin.com/in/baver-koca)
+- Email: [baver.koca00@gmail.com](mailto:baver.koca00@gmail.com)
+
+---
+
+## License
+
+This project is currently private/proprietary unless a license is added.
