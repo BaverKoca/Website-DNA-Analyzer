@@ -11,6 +11,16 @@ Website DNA Analyzer is a deterministic premium audit tool that opens a website 
 
 It is built to feel like an elite design intelligence instrument rather than a generic SaaS dashboard.
 
+## 🖼️ Screenshots
+
+<img width="1879" height="850" alt="Image" src="https://github.com/user-attachments/assets/3ec6b0f4-54e3-48ac-8df5-4a089d9f394f" />
+
+<img width="1883" height="855" alt="Image" src="https://github.com/user-attachments/assets/1cac1fbf-660e-48f1-892e-de23650be4eb" />
+
+<img width="956" height="857" alt="Image" src="https://github.com/user-attachments/assets/ee5c530a-25c9-4147-84bc-0ed840dc0661" />
+
+<img width="1010" height="858" alt="Image" src="https://github.com/user-attachments/assets/60348fb8-7e00-4b25-9926-06712e0765ca" />
+
 ---
 
 ## Product Highlights
@@ -121,19 +131,6 @@ Use this flow for a clean product demo:
 
 ---
 
-## Screenshots
-
-Add screenshots here before publishing or presenting the project.
-
-| Screen | Preview |
-| --- | --- |
-| Landing and analyzer dashboard | `screenshots/landing-dashboard.png` |
-| Single-site Visual DNA result | `screenshots/visual-dna.png` |
-| Compare Mode split audit | `screenshots/compare-mode.png` |
-| Exported report print preview | `screenshots/report-preview.png` |
-
----
-
 ## Environment Notes
 
 No environment variables are required for the current version.
@@ -185,16 +182,6 @@ For the most reliable demo, run the project locally or deploy it to an environme
 ## Project Status
 
 This project is feature-complete as a deterministic MVP and ready for demo use. The next production step would be separating Playwright analysis into a dedicated worker or browser-capable runtime.
-
----
-
-## Author
-
-**Baver Koca**
-
-- GitHub: [github.com/BaverKoca](https://github.com/BaverKoca)
-- LinkedIn: [linkedin.com/in/baver-koca](https://www.linkedin.com/in/baver-koca)
-- Email: [baver.koca00@gmail.com](mailto:baver.koca00@gmail.com)
 
 ---
 
