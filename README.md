@@ -181,10 +181,4 @@ For the most reliable demo, run the project locally or deploy it to an environme
 
 ## Project Status
 
-This project is feature-complete as a deterministic MVP and ready for demo use. The next production step would be separating Playwright analysis into a dedicated worker or browser-capable runtime.
-
----
-
-## License
-
-This project is currently private/proprietary unless a license is added.
+This project is feature-complete as a deterministic MVP and ready for demo use. The next production step would be separating Playwright analysis into a dedicated worker or browser-capable runtime. 
